@@ -1,0 +1,18 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+.button{
+    margin-left: 100px;
+}
+.example-events {
+  height: 200px;
+  border: 1px solid #555;
+  overflow: auto;
+}
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

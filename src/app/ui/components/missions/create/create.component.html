@@ -1,0 +1,14 @@
+
+<div mat-dialog-content>
+  <p>Ekleme ekranı</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Content</mat-label>
+    <input matInput #txtcontent>
+  </mat-form-field>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">cancel</button>
+  <button mat-button (click)="create(txtcontent)"  cdkFocusInitial>create</button>
+</div>

@@ -1,0 +1,20 @@
+<mat-form-field appearance="fill">
+  <mat-label>User Id</mat-label>
+  <select matNativeControl (change)="selectUserId($event)">
+    <option value=""></option>
+    <option *ngFor="let option of userids" [value]="option.value"
+            [selected]="selecteduserid === option.value">{{ option.viewValue }}</option>
+  </select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>Mission Id</mat-label>
+  <select matNativeControl (change)="selectMissionids($event)">
+    <option value=""></option>
+    <option *ngFor="let option of missionids" [value]="option.value"
+            [selected]="selectedmissionids === option.value">{{ option.viewValue }}</option>
+  </select>
+</mat-form-field>
+
+
+  <button mat-stroked-button color="primary" class="button" (click)="create()">Create</button>

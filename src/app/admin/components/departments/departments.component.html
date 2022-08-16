@@ -1,0 +1,19 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <app-create ></app-create>
+    
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+        <div>
+      <button mat-stroked-button color="primary" type="button" mat-button (click)="drawer.toggle()">
+        DepartmentCreate
+      </button>
+    </div>
+    <div class="list-conteiner"><app-list></app-list></div>
+      
+    </div>
+    
+    
+  
+  </mat-drawer-container>

@@ -1,0 +1,30 @@
+<div mat-dialog-content>
+    <p>Düzenleme ekranı</p>
+    <mat-form-field appearance="fill">
+      <mat-label> Id</mat-label>
+      <input [disabled]="true" value="{{data.id}}" matInput #txtId>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>User Id</mat-label>
+      <select matNativeControl (change)="selectUserId($event)">
+        <option value=""></option>
+        <option *ngFor="let option of userids" [value]="option.value"
+                [selected]="selecteduserid === option.value">{{ option.viewValue }}</option>
+      </select>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Authority Id</mat-label>
+      <select matNativeControl (change)="selectAuthorityids($event)">
+        <option value=""></option>
+        <option *ngFor="let option of authorityids" [value]="option.value"
+                [selected]="selectedauthorityids === option.value">{{ option.viewValue }}</option>
+      </select>
+    </mat-form-field>
+    
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">cancel</button>
+    <button mat-button (click)="update(txtId)"  cdkFocusInitial>update</button>
+  </div>
+  
