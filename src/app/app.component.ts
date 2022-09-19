@@ -9,9 +9,11 @@ declare var $:any
 })
 export class AppComponent {
   title = 'MissionTrackingSystemUI';
+  
   constructor(public authService:AuthService,private router:Router){
     authService.identityCheck();
   }
+
   signOut(){
     localStorage.removeItem("accessToken");
     this.authService.identityCheck();
@@ -19,4 +21,3 @@ export class AppComponent {
     alert("Oturum kapatılmıştır");
   }
 }
-

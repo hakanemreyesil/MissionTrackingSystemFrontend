@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ListUser } from 'src/app/concrats/listUser';
 import { UserService } from 'src/app/services/common/models/user.service';
@@ -15,17 +16,20 @@ interface Departments {
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent {
-  startDate = new Date();
+  
   constructor(private userService : UserService,
     public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     
 ) { }
-update(txtid:HTMLInputElement,txtName:HTMLInputElement,txtSurname:HTMLInputElement,txtPhoneNumber:HTMLInputElement){
+
+date = new FormControl(new Date());
+update(txtid:HTMLInputElement,txtName:HTMLInputElement,txtSurname:HTMLInputElement,txtPhoneNumber:HTMLInputElement,dates){
   const updateuser: ListUser = new ListUser();
   updateuser.id=txtid.value;
   updateuser.name=txtName.value;
   updateuser.surName=txtSurname.value;
+  updateuser.birthday=dates;
   updateuser.phoneNumber=txtPhoneNumber.value;
   updateuser.departmentId=this.selectedDepartment;
   this.userService.Update(updateuser);
@@ -34,6 +38,7 @@ update(txtid:HTMLInputElement,txtName:HTMLInputElement,txtSurname:HTMLInputEleme
 
 onNoClick(): void {
   this.dialogRef.close();
+  
 }
 
 departments: Departments[] = [

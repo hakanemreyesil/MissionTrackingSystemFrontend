@@ -15,7 +15,6 @@ import { CreateComponent } from './create/create.component';
 import { UpdateComponent } from './update/update.component';
 
 
-
 @NgModule({
   declarations: [
     UsermissionsComponent,

@@ -9,13 +9,13 @@
      
       <ng-container matColumnDef="createdDate">
         <th mat-header-cell *matHeaderCellDef> Created Date</th>
-        <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.createdDate| date:'yyyy-MM-dd'}} </td>
       </ng-container>
   
       
       <ng-container matColumnDef="updateDate">
         <th mat-header-cell *matHeaderCellDef> Update Date </th>
-        <td mat-cell *matCellDef="let element" (callback)="getDepartments()"> {{element.updatedDate}} </td>
+        <td mat-cell *matCellDef="let element" (callback)="getDepartments()"> {{element.updatedDate| date:'yyyy-MM-dd'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="delete">

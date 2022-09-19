@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, NgForm } from '@angular/forms';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { MatTableDataSource } from '@angular/material/table';
-import { type } from 'jquery';
+import { FormControl} from '@angular/forms';
 import { CreateUser } from 'src/app/concrats/createUser';
-import { ListDepartment } from 'src/app/concrats/listDepartment';
-import { ListUser } from 'src/app/concrats/listUser';
-import { DepartmentService } from 'src/app/services/common/models/department.service';
+
 import { UserService } from 'src/app/services/common/models/user.service';
 interface Departments {
   value: string;
@@ -15,27 +10,25 @@ interface Departments {
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  styleUrls: ['./create.component.css'],
 })
 
 export class CreateComponent implements OnInit {
   constructor(private userService : UserService/*,private departmentService: DepartmentService*/) { }
-  startDate = new Date();
+  date = new FormControl(new Date());
   
-  // addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-  //   this.events.push(`${type}: ${event.value}`);
-  // }
+ 
 
   ngOnInit(): void {
   }
-  create(txtName:HTMLInputElement,txtSurname:HTMLInputElement,txtPhoneNumber:HTMLInputElement){
+  create(txtName:HTMLInputElement,txtSurname:HTMLInputElement,txtPhoneNumber:HTMLInputElement,dates){
     const createuser: CreateUser = new CreateUser();
   
     createuser.name=txtName.value;
     createuser.surName=txtSurname.value;
     createuser.phoneNumber=txtPhoneNumber.value;
     createuser.departmentId=this.selectedDepartment;
-    createuser.birthday=this.startDate;
+    createuser.birthday=dates;
     console.log(createuser)
     this.userService.create(createuser, errorMessage => {
       alert(errorMessage);

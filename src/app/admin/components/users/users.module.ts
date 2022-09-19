@@ -16,6 +16,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { UpdateComponent } from './update/update.component';
 import {MatSelectModule} from '@angular/material/select';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -34,7 +35,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatSidenavModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,MatTableModule,MatPaginatorModule,MatDialogModule,MatCheckboxModule,MatDatepickerModule,MatNativeDateModule, MatSelectModule
+    MatButtonModule,MatTableModule,MatPaginatorModule,MatDialogModule,MatCheckboxModule,MatDatepickerModule,MatNativeDateModule, MatSelectModule,    MatNativeDateModule,
+   
+    ReactiveFormsModule, FormsModule,
   ]
 })
 export class UsersModule { }

@@ -1,19 +1,17 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CreateUserMission } from 'src/app/concrats/createUserMission';
-import { ListMission } from 'src/app/concrats/listMission';
 import { ListUserMission } from 'src/app/concrats/listUserMission';
 import { UsermissionService } from 'src/app/services/common/models/usermission.service';
 import { DialogData } from '../list/list.component';
+
 interface Userids {
   value: string;
   viewValue: string;
-  
 }
+
 interface Missionids {
   value: string;
   viewValue: string;
-  
 }
 
 @Component({
@@ -21,6 +19,7 @@ interface Missionids {
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css']
 })
+
 export class UpdateComponent {
 
   constructor(public dialogRef: MatDialogRef<UpdateComponent>,

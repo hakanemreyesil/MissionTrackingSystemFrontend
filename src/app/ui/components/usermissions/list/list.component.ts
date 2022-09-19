@@ -27,41 +27,37 @@ export class ListComponent implements OnInit {
   async getUserMissions(){
     const allUserMissions: ListUserMission[]=  await this.usermissionService.List(erorMessage=>{alert("list getirilemedi")})
     
-   // this.missions =new MatTableDataSource(allMissions);
+    // this.missions =new MatTableDataSource(allMissions);
     this.dataSource= new MatTableDataSource<ListUserMission>(allUserMissions);
-     // this.dataSource.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginator;
    }
-   async delete(id:HTMLImageElement){
+
+  async delete(id:HTMLImageElement){
      let text = "Silmek istediğinize emin misiniz?";
    if (confirm(text) == true) {
      this.usermissionService.Delete(this.usermissionService,id)
      
-     
    } else {
      alert("silme işlemi başarısız")
    }
-     
+
      // confirm("Silmek istediğinize emin misiniz?")
  
      // this.departmentService.Delete(this.departmentService,id)
-     
-   
+  
      // this.departmentService.List(this.getDepartments);
    }
-  
  
    async ngOnInit() {
-   // const allMissions:ListMission[] = await  this.missionService.List();
-   // this.dataSource = new MatTableDataSource<ListMission>(allMissions);
-   await this.getUserMissions();
+    // const allMissions:ListMission[] = await  this.missionService.List();
+    // this.dataSource = new MatTableDataSource<ListMission>(allMissions);
+    await this.getUserMissions();
    }
+
    openDialog(missionid:HTMLInputElement,userid:HTMLInputElement,id:HTMLImageElement): void {
     const dialogRef = this.dialog.open(UpdateComponent, {
       width: '350px',
       data: {userid:userid,missionid:missionid,id:id},
     });
-
-   
   }
-
 }

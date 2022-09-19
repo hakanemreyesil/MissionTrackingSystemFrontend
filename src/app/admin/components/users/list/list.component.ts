@@ -61,12 +61,13 @@ export class ListComponent implements OnInit {
   // this.dataSource = new MatTableDataSource<ListMission>(allMissions);
   await this.getUsers();
   }
-  openDialog(id:HTMLImageElement,name:HTMLInputElement,surName:HTMLInputElement,phoneNumber:HTMLInputElement,departmentId:HTMLInputElement): void {
+  openDialog(id:HTMLImageElement,name:HTMLInputElement,surName:HTMLInputElement,phoneNumber:HTMLInputElement,departmentId:HTMLInputElement,birthDay:HTMLInputElement): void {
     const dialogRef = this.dialog.open(UpdateComponent, {
       width: '350px',
-      data: {id:id,name:name,surname:surName,phonenumber:phoneNumber,departmentid:departmentId},
-    });
-
+      data: {id:id,name:name,surname:surName,phonenumber:phoneNumber,departmentid:departmentId,birthday:birthDay},
+      
+    }); 
+    
     dialogRef.afterClosed().subscribe( result => {
       
       //this.content = result.value;

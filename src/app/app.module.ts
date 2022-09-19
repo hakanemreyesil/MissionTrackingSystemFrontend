@@ -15,9 +15,6 @@ import { JwtModule } from '@auth0/angular-jwt';
   declarations: [
     AppComponent,
     DeleteDirective,
-    
-    
-    
   ],
   imports: [
     BrowserModule,
